@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>App Using Services</title>
+</head>
+<body  ng-app="app">
+<div ng-controller="BooksController as books">
+    <h1>Hello {{books.appName}}!</h1>
+
+    <h3>All Books</h3>
+    <div>
+        <ul>
+            <li ng-repeat="book in books.allBooks">
+                {{book.tittle}} - {{book.author}}
+            </li>
+        </ul>
+    </div>
+
+    <h3>All Readers</h3>
+    <div>
+        <ul>
+            <li ng-repeat="reader in books.allReaders">
+                {{reader.name}} - {{books.getBadge(reader.totalMinutesRead)}}
+            </li>
+        </ul>
+    </div>
+
+
+
+
+</div>
+    
+</body>
+</html>
+
+
+
+
+
+
+<script src="/node_modules/angular/angular.js"></script>
+<script src="/public/app/app.js"></script>
+<script src="/public/app/books/BooksController.js"></script>
+<script src="/public/app/services/dataService.js"></script>
+<script src="/public/app/services/loggerService.js"></script>
+<script src="/public/app/services/constantService.js"></script>
+<script src="/public/app/services/badgeService.js"></script>
